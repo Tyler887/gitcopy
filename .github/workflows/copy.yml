@@ -24,4 +24,4 @@ jobs:
 
           name: Cloned Git repository
 
-          path: ${{ github.repository }}.git
+          path: ${{ github.repository_name }}.git
