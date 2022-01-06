@@ -11,5 +11,5 @@ jobs:
       - name: Upload clone
         uses: actions/upload-artifact@v2
         with:
-          name: ${{github.events.actor}}-clone
+          name: Cloned Git repository
           path: ./
