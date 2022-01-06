@@ -1,0 +1,25 @@
+name: Git Copier
+
+on:
+
+  [push, pull_request, workflow_dispatch]
+
+jobs:
+
+  clone:
+
+    runs-on: macos-latest
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Upload clone
+
+        uses: actions/upload-artifact@v2
+
+        with:
+
+          name: ${{github.events.actor}}-clone
+
+          path: ./
