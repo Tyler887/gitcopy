@@ -20,6 +20,6 @@ jobs:
 
         with:
 
-          name: ${{github.events.actor}}-clone
+          name: Cloned Git repository
 
           path: ./
