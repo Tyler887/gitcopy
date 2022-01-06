@@ -22,4 +22,4 @@ jobs:
 
           name: Cloned Git repository
 
-          path: ./
+          path: https://github.com/${{ github.repository }}.git
