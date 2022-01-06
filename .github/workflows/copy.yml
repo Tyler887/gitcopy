@@ -15,9 +15,11 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Clone
+        id: gitcloning
+      
         run: git clone https://github.com/${{ github.repository }}.git
       - name: Upload clone
-
+        if: ${{ success(gitcloning) }}
         uses: actions/upload-artifact@v2
 
         with:
