@@ -15,11 +15,9 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Clone
-        id: do-clone
       
         run: git clone https://github.com/${{ github.repository }}.git
       - name: Upload clone
-        if: ${{ success(do-clone) }}
         uses: actions/upload-artifact@v2
 
         with:
@@ -27,3 +25,5 @@ jobs:
           name: Cloned Git repository
 
           path: ${{ github.repository_name }}.git
+          if-no-files-found: error
+          
