@@ -26,4 +26,17 @@ jobs:
 
           path: ${{ github.repository_name }}.git
           if-no-files-found: error
-          
+    
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open issue
+        if: ${{ failure(clone) }}
+        uses: fullStackMiller/open-issue@v1.0.1
+        with:
+          token: ${{ github.secrets.GITHUB_TOKEN }}
+          title: Automated Bug Report
+          body: |
+            Sorry, something wrong happened.
+            Guru Meditation.
+     
